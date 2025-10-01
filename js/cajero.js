@@ -38,6 +38,7 @@ function mostrarMenu() {
     `;
 }
 
+
 // Retiro
 function retiro() {
     estado = "q5";
@@ -54,9 +55,15 @@ function procesarRetiro() {
         .then(res => res.text())
         .then(data => {
             mostrarMensaje(data);
-            finalizar();
+
+            // Aquí ofrecemos la opción de recibo antes de finalizar
+            document.getElementById("teclado").innerHTML = `
+                <button class="btn" onclick="imprimirRecibo('${monto}')">Imprimir Recibo</button>
+                <button class="btn secondary" onclick="finalizar()">No imprimir</button>
+            `;
         });
 }
+
 
 // Transacción
 function transaccion() {
@@ -116,6 +123,13 @@ function resetear() {
         <button class = btn onclick="insertarTarjeta()">Insertar Tarjeta</button>
         <button class = btn onclick="cancelar()">Cancelar</button>
     `;
+}
+
+function imprimirRecibo(monto) {
+    document.getElementById("mensaje").innerHTML = `
+        <iframe src="recibo.php?monto=${monto}&saldo=450000" style="width:100%; height:300px; border:none;"></iframe>
+    `;
+    finalizar();
 }
 
 function cancelar() {
