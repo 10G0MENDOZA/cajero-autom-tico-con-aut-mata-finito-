@@ -10,7 +10,7 @@ if (!isset($_SESSION["saldo"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cajero Automático - Demo</title>
+    <title>Cajero Automático</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -40,9 +40,8 @@ if (!isset($_SESSION["saldo"])) {
                 </div>
 
                 <div class="info-prueba">
-                    <strong>Tarjetas de prueba</strong>
+                    <strong>Tarjeta de prueba</strong>
                     <p>Tarjeta: <code>1111</code> → PIN: <code>1234</code></p>
-                    <p>Tarjeta: <code>2222</code> → PIN: <code>0000</code></p>
                 </div>
             </div>
         </main>

@@ -100,7 +100,7 @@ function activarAutomataMonto() {
 
         if (valor === "") {
             montoInput.value = "";
-            mostrarMensaje("Ingrese monto válido:");
+            mostrarMensaje("⚠️ Solo se permiten números en el monto.:");
             return;
         }
 
